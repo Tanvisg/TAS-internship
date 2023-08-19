@@ -1,4 +1,7 @@
-import {AppBar, Toolbar, Box, Typography, styled} from '@mui/material'
+import {AppBar, Toolbar, Box, Typography, styled} from '@mui/material';
+
+//components
+import Search from './Search';
 
 const StyledAppBar = styled(AppBar)`
     background-color: #2874f0;
@@ -36,6 +39,7 @@ const Header = () =>{
                         <PlusImage src={subURL} alt="url" />
                     </Box>
                 </Component>
+                <Search />
             </Toolbar>
         </StyledAppBar>
     )
