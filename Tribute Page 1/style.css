@@ -1,0 +1,60 @@
+  @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Inter:wght@300&family=Merriweather:ital,wght@0,300;1,300;1,400&family=Playfair+Display&family=Poppins:wght@300&family=Prata&family=Roboto:wght@300&family=Varela+Round&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #D7F9FF;
+    font-family: 'Poppins', sans-serif;
+    color: #0E1C36;
+}
+
+.main{
+    font-weight: 100;
+    text-align: center;
+    margin: 0 3rem;
+}
+
+.quote{
+    margin: 20px;
+    font-size: large;
+}
+
+.about, .about-content{
+    margin: 0 2rem;
+    font-size: large;
+    background-color: #FFEDE1 ;
+}
+
+.about-content{
+    margin-top: 10px;
+}
+
+.row-img{
+    margin: 2rem;
+    border: #0E1C36;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    align-items: center;
+}
+
+.row-img-child > img{
+    width: 300px; 
+    height: 250px; 
+    object-fit: cover;
+}
+
+.row-img-child{
+    width: 400px; 
+    height: 300px; 
+    margin: 2rem;
+}
+
+a{
+    color: blue;
+}
+
+footer{
+    text-align: center;
+}
