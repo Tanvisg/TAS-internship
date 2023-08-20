@@ -1,10 +1,13 @@
+// components
 import Navbar from "./Navbar";
+import Banner from "./Banner";
 
 const Home = () =>{
     return(
-        <div>
+        <>
             <Navbar/>
-        </div>
+            <Banner/>
+        </>
     )
 }
 
