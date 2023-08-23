@@ -2,7 +2,7 @@ import { Dialog, Box, TextField, Typography, Button, styled } from '@mui/materia
 import { useState } from 'react';
 
 const Component = styled(Box)`
-    height: 70vh;
+    height: 82vh;
     width: 90vh;
 `;
 
@@ -17,11 +17,11 @@ const Wrapper = styled(Box)`
 `;
 
 const Image = styled(Box)`
-    background: url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png) center 75% no-repeat;
+    background: url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png) center 85% no-repeat;
     background-color: #2874f0;
-    height: 82.8%;
+    height: 83%;
     width: 28%;
-    padding: 40px 35px;
+    padding: 46.3px 35px;
     & > p, & h5 {
         color: #fff;
         font-weight: 600;
@@ -73,9 +73,18 @@ const accountInitialValues = {
     }
 }
 
+const signUpInitialValues = {
+    firstName: '',
+    lastName: '',
+    userName: '',
+    email: '',
+    password: ''
+}
+
 const LoginDialog = ({open, setOpen}) =>{
 
     const [account, toggleAccount] = useState(accountInitialValues.login);
+    const [signUp, setSignUp] = useState(signUpInitialValues);
 
     const handleClose = () =>{
         setOpen(false);
@@ -84,6 +93,11 @@ const LoginDialog = ({open, setOpen}) =>{
 
     const toggleSignUp = () => {
         toggleAccount(accountInitialValues.signUp);
+    }
+
+    const onInputChange = (e) => {
+     setSignUp({...signUp, [e.target.name]: e.target.value});
+     console.log(signUp);   
     }
 
     return(
@@ -107,11 +121,12 @@ const LoginDialog = ({open, setOpen}) =>{
                         </Wrapper>
                     :
                         <Wrapper>
-                            <TextField variant="standard" label="Enter FirstName"style={{paddingTop: 5, paddingLeft: 0}}/>
-                            <TextField variant="standard" label="Enter LastName" style={{paddingTop: 5, paddingLeft: 0}}/>
-                            <TextField variant="standard" label="Enter UserName" style={{paddingTop: 5, paddingLeft: 0}}/>
-                            <TextField variant="standard" label="Enter Email" style={{paddingTop: 5, paddingLeft: 0}}/>
-                            <TextField variant="standard" label="Enter Password" style={{paddingTop: 5, paddingLeft: 0}}/>
+                            <TextField variant="standard" label="Enter FirstName" onChange={(e) => onInputChange(e)}    name='firstName' style={{paddingTop: 5, paddingLeft: 0}}/>
+                            <TextField variant="standard" label="Enter LastName" onChange={(e) => onInputChange(e)} name='lastName' style={{paddingTop: 5, paddingLeft: 0}}/>
+                            <TextField variant="standard" label="Enter UserName" onChange={(e) => onInputChange(e)} name='userName' style={{paddingTop: 5, paddingLeft: 0}}/>
+                            <TextField variant="standard" label="Enter Email" onChange={(e) => onInputChange(e)} name='email' style={{paddingTop: 5, paddingLeft: 0}}/>
+                            <TextField variant="standard" label="Enter Password" onChange={(e) => onInputChange(e)} name='password' style={{paddingTop: 5, paddingLeft: 0}}/>
+                            <TextField variant="standard" label="Enter Mobile Number" onChange={(e) => onInputChange(e)} name='phone' style={{paddingTop: 5, paddingLeft: 0}}/>
                             <LoginButton>Continue</LoginButton>
                         </Wrapper>
                     }
